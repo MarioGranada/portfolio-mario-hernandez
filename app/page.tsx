@@ -8,6 +8,17 @@ const Home = async () => {
   console.log('in here oe projects', data);
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      Header signature leading to home about projects (list of projects with
+      more description and details) itbible Contact {'->'} might be an
+      integration with calendly
+      <br />
+      Main profile image full rounded short description with read more link to
+      about Github contribution graph List of projects with image, title, short
+      description, link to project
+      <br />
+      Footer link to linkedin link to github link to mailto: to daily.dev icon
+      leading to AI chat
+      <br />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
