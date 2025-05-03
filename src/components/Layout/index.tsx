@@ -12,13 +12,14 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 });
+
 type Props = {
   children?: React.ReactNode;
 };
 
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

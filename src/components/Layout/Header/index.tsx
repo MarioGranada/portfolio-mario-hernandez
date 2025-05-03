@@ -3,23 +3,21 @@ import Link from 'next/link';
 const Header = () => {
   return (
     <header>
-      <div className="flex justify-between">
-        <div>
-          <Link href="/">mario hernandez</Link>
-        </div>
+      <div className="px-4 flex justify-between w-full xl:max-w-2/3 justify-self-center p-4 items-center shadow-lg shadow-black/5">
+        <Link href="/">mario hernandez</Link>
         <div className="flex gap-4">
-          <ul className="flex gap-4">
+          <ul className="flex gap-4 items-center">
             <li>
-              <Link href="about">about</Link>
+              <Link href="about">About</Link>
             </li>
             <li>
-              <Link href="projects">projects</Link>
+              <Link href="projects">Projects</Link>
             </li>
             <li>
-              <Link href="it-bible">it bible</Link>
+              <Link href="it-bible">It Bible (under construction)</Link>
             </li>
           </ul>
-          <button>contact with calendly</button>
+          <button className="btn btn-primary">Contact</button>
         </div>
       </div>
     </header>
