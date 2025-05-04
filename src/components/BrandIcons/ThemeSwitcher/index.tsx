@@ -17,8 +17,8 @@ const ThemeSwitcher: FC<Props> = ({ isReversed = false }) => {
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
         className="theme-toggle__within"
-        height="1em"
-        width="1em"
+        height="1.5em"
+        width="1.5em"
         viewBox="0 0 32 32"
         fill="currentColor"
       >

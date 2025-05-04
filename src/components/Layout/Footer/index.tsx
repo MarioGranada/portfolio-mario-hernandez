@@ -20,7 +20,6 @@ const Footer = () => {
           <IconLink Icon={Gmail} label="Email me" />
           <IconLink Icon={DailyDev} label="Daily.dev" />
           <IconLink Icon={Spotify} label="Spotify" />
-          <IconLink Icon={Spotify} label="Switch Theme" />
           <ThemeSwitcher />
           <IconLink Icon={Sparkles} label="AI Chat" />
         </ul>

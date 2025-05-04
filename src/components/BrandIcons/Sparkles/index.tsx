@@ -1,7 +1,7 @@
 import type { SVGProps } from 'react';
 const Sparkles = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
     height="1em"
     xmlns="http://www.w3.org/2000/svg"
