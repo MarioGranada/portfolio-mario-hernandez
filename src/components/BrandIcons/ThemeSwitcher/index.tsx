@@ -1,5 +1,15 @@
-import { FC } from 'react';
+'use client';
+
+import { FC, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import './within.css';
+
+type Theme = 'light' | 'dark';
+
+enum Themes {
+  light = 'light',
+  dark = 'dark',
+}
 
 type Props = {
   className?: string;
@@ -7,12 +17,33 @@ type Props = {
 };
 
 const ThemeSwitcher: FC<Props> = ({ isReversed = false }) => {
+  const [checked, setChecked] = useState<boolean>(false);
+  const router = useRouter();
+
+  const getThemeValue = (isChecked: boolean): Theme =>
+    isChecked ? Themes.dark : Themes.light;
+
+  const setThemeCookie = (theme: string) => {
+    document.cookie = `theme=${theme}; Secure`;
+  };
+
+  const themeSwitchHandler = (isChecked: boolean) => {
+    const theme = getThemeValue(isChecked);
+    setThemeCookie(theme);
+    setChecked(isChecked);
+    router.refresh();
+  };
+
   return (
     <div className="group relative">
       <label
         className={`theme-toggle ${isReversed ? 'theme-toggle--reversed' : ''}`}
       >
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={(e) => themeSwitchHandler(e.target.checked)}
+        />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
