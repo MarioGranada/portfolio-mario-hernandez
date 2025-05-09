@@ -1,14 +1,28 @@
 import Link from 'next/link';
 import { FC } from 'react';
+import IconButton from './IconButton';
 
 type Props = {
   Icon: React.ElementType;
   label: string;
   as?: 'a' | 'button';
   href?: string;
+  onClick?: () => void;
 };
-const IconLink: FC<Props> = ({ Icon, label, href = '/' }) => {
+
+const IconLink: FC<Props> = ({
+  Icon,
+  label,
+  as = 'a',
+  href = '/',
+  onClick,
+}) => {
   const IconComponent = Icon;
+
+  if (as === 'button') {
+    return <IconButton Icon={Icon} label={label} onClick={onClick} />;
+  }
+
   return (
     <li>
       <Link href={href} className="group relative">

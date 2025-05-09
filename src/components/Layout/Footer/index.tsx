@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import {
   LinkedIn,
@@ -21,7 +23,14 @@ const Footer = () => {
           <IconLink Icon={DailyDev} label="Daily.dev" />
           <IconLink Icon={Spotify} label="Spotify" />
           <ThemeSwitcher />
-          <IconLink Icon={Sparkles} label="AI Chat" />
+          <IconLink
+            Icon={Sparkles}
+            label="AI Chat"
+            as="button"
+            onClick={() => {
+              console.log('in here oe AI chat');
+            }}
+          />
         </ul>
       </div>
     </footer>
