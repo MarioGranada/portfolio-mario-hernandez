@@ -1,7 +1,6 @@
 'use client';
 
 import { FC, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import './within.css';
 import './theme-animation.css';
 
@@ -19,7 +18,6 @@ type Props = {
 
 const ThemeSwitcher: FC<Props> = ({ isReversed = false }) => {
   const [checked, setChecked] = useState<boolean>(false);
-  const router = useRouter();
 
   const getThemeValue = (isChecked: boolean): Theme =>
     isChecked ? Themes.dark : Themes.light;
@@ -31,6 +29,7 @@ const ThemeSwitcher: FC<Props> = ({ isReversed = false }) => {
   const themeSwitchHandler = (isChecked: boolean) => {
     if (!document.startViewTransition) {
       switchTheme(isChecked);
+      return;
     }
 
     document.startViewTransition(() => {
@@ -42,7 +41,7 @@ const ThemeSwitcher: FC<Props> = ({ isReversed = false }) => {
     const theme = getThemeValue(isChecked);
     setThemeCookie(theme);
     setChecked(isChecked);
-    router.refresh();
+    document.documentElement.dataset.theme = theme;
   };
 
   return (
