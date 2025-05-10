@@ -3,6 +3,7 @@
 import { FC, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import './within.css';
+import './theme-animation.css';
 
 type Theme = 'light' | 'dark';
 
@@ -28,6 +29,16 @@ const ThemeSwitcher: FC<Props> = ({ isReversed = false }) => {
   };
 
   const themeSwitchHandler = (isChecked: boolean) => {
+    if (!document.startViewTransition) {
+      switchTheme(isChecked);
+    }
+
+    document.startViewTransition(() => {
+      switchTheme(isChecked);
+    });
+  };
+
+  const switchTheme = (isChecked: boolean) => {
     const theme = getThemeValue(isChecked);
     setThemeCookie(theme);
     setChecked(isChecked);
