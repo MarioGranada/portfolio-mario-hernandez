@@ -23,6 +23,7 @@ const Footer = () => {
           <IconLink Icon={DailyDev} label="Daily.dev" />
           <IconLink Icon={Spotify} label="Spotify" />
           <ThemeSwitcher />
+          <div className="w-0.5 h-full rounded-box bg-neutral-content" />
           <IconLink
             Icon={Sparkles}
             label="AI Chat"
