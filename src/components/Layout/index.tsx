@@ -28,7 +28,10 @@ const Layout: FC<Props> = async ({ children }) => {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        {children}
+        <main className="px-4 flex justify-between w-full xl:max-w-2/3 justify-self-center p-4 items-center ">
+          {children}
+        </main>
+
         <Footer />
       </body>
     </html>
