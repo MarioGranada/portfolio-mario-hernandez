@@ -3,11 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Home = async () => {
-  const projects = await fetch(
-    'https://portfolio-db-43961-default-rtdb.firebaseio.com/projects.json'
-  );
+  const projects = await fetch(process.env.PROJECTS_PATH as string);
   const { projects: projectsData } = await projects.json();
-  console.log('in here oe projects', projectsData);
+
   return (
     <>
       <section className="flex gap-4">
@@ -20,7 +18,7 @@ const Home = async () => {
             className="clip-path-circle self-center"
           />
           <div>
-            <h1>Hi! Welcome to my site!</h1>
+            <h1 className="prose">Hi! Welcome to my site!</h1>
             <p>
               My name is Mario Hernandez. I am a software developer with a
               passion for creating innovative solutions. I have a strong
@@ -32,7 +30,7 @@ const Home = async () => {
         </div>
       </section>
       <section className="flex justify-center w-full">
-        Github contribution graph
+        <h2>Github contribution graph</h2>
       </section>
       <section className="flex w-full">
         <ProjectsList projects={projectsData} />

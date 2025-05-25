@@ -25,7 +25,7 @@ const Layout: FC<Props> = async ({ children }) => {
   return (
     <html lang="en" data-theme={theme}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <Header />
         <main className="px-4 flex justify-between w-full xl:max-w-2/3 justify-self-center p-4 items-center ">

@@ -1,8 +1,36 @@
 @import 'tailwindcss';
+
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark;
 }
 
 @utility clip-path-circle {
   clip-path: circle(40%);
+}
+
+h1 {
+  @apply text-3xl my-4 py-4;
+}
+
+h2 {
+  @apply text-2xl my-3 py-3;
+}
+
+h3 {
+  @apply text-xl my-2 py-2;
+}
+
+.signaturetest2 {
+  fill: var(--color-base-content, black);
+  stroke: var(--color-base-content, black);
+  stroke-width: 1;
+  stroke-dasharray: 210;
+  stroke-dashoffset: 210;
+  animation: sign 3s ease-out forwards;
+}
+
+@keyframes sign {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
