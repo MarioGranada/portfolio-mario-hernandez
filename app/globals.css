@@ -20,17 +20,12 @@ h3 {
   @apply text-xl my-2 py-2;
 }
 
-.signaturetest2 {
-  fill: var(--color-base-content, black);
-  stroke: var(--color-base-content, black);
-  stroke-width: 1;
-  stroke-dasharray: 210;
-  stroke-dashoffset: 210;
-  animation: sign 3s ease-out forwards;
-}
+@theme {
+  --animate-sign: sign 3s ease-out forwards;
 
-@keyframes sign {
-  to {
-    stroke-dashoffset: 0;
+  @keyframes sign {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 }

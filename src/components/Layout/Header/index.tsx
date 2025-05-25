@@ -17,7 +17,7 @@ const Header = () => {
               <Link href="projects">Projects</Link>
             </li>
             <li>
-              <Link href="it-bible">It Bible (under construction)</Link>
+              <Link href="it-bible">It Bible &#128679;</Link>
             </li>
           </ul>
           <button className="btn btn-primary">Contact</button>
