@@ -1,21 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility clip-path-circle {
+  clip-path: circle(40%);
+}
+
+h1 {
+  @apply text-3xl my-4 py-4;
+}
+
+h2 {
+  @apply text-2xl my-3 py-3;
+}
+
+h3 {
+  @apply text-xl my-2 py-2;
+}
+
+@theme {
+  --animate-sign: sign 3s ease-out forwards;
+
+  @keyframes sign {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
