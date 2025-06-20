@@ -5,12 +5,13 @@ type Props = {
   label: string;
   onClick?: () => void;
   children?: React.ReactNode;
+  className?: string;
 };
 
-const IconButton: FC<Props> = ({ Icon, label, onClick }) => {
+const IconButton: FC<Props> = ({ Icon, label, onClick, className }) => {
   return (
     <button
-      className="group relative cursor-pointer"
+      className={`group relative cursor-pointer ${className || ''} `}
       onClick={() => {
         onClick?.();
       }}

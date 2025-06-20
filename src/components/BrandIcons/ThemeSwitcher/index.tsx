@@ -57,7 +57,7 @@ const ThemeSwitcher: FC<Props> = ({ isReversed = false }) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
-          className="theme-toggle__within text-2xl  transition-transform duration-200 ease-out transform-gpu group-hover:scale-125"
+          className="theme-toggle__within text-2xl transition-transform duration-200 ease-out transform-gpu group-hover:scale-125 text-theme-toggle"
           height="1em"
           width="1em"
           viewBox="0 0 32 32"
