@@ -1,7 +1,18 @@
 @import 'tailwindcss';
-
-@plugin "daisyui" {
+@plugin "daisyui";
+/* @plugin "daisyui" {
   themes: light --default, dark --prefersdark;
+} */
+
+@plugin "daisyui/theme" {
+  name: 'light';
+  default: true;
+  --theme-switcher: var(--color-yellow-300);
+}
+
+@plugin "daisyui/theme" {
+  name: 'dark';
+  --theme-switcher: var(--color-neutral-200);
 }
 
 @utility clip-path-circle {
@@ -22,6 +33,7 @@ h3 {
 
 @theme {
   --animate-sign: sign 3s ease-out forwards;
+  --color-theme-toggle: var(--theme-switcher);
 
   @keyframes sign {
     to {
