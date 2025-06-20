@@ -1,10 +1,11 @@
 import ProjectsList from '@/src/components/Pages/Home/ProjectsList';
+import getFirebaseData from '@/src/components/Pages/Home/helpers/getFirebaseData';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const Home = async () => {
-  const projects = await fetch(process.env.PROJECTS_PATH as string);
-  const { projects: projectsData } = await projects.json();
+  const { data } = await getFirebaseData();
+  const { projects } = data;
 
   return (
     <>
@@ -33,7 +34,7 @@ const Home = async () => {
         <h2>Github contribution graph</h2>
       </section>
       <section className="flex w-full">
-        <ProjectsList projects={projectsData} />
+        <ProjectsList projects={projects} />
       </section>
     </>
   );
